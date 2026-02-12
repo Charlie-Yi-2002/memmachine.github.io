@@ -97,14 +97,14 @@ Before integrating MemMachine, you need to understand how it organizes and isola
 - Separates different products, services, or workflows
 - Example: "customer-support", "sales-assistant", "patient-care"
 
-**`produced_for` (Produced For)**
+**`producer` (Producer)**
 
 - Identifies who or what created the memory
 - In simple chatbot scenarios, effectively functions as a user identifier - when searching for a user's memories, filter by their `producer` value
 - Used for filtering and attribution during retrieval
 - Example: "user-alice", "user-12345", "triage-agent"
 
-**produced_for (Produced For)**
+**`produced_for` (Produced For)**
 
 - Identifies who the memory is intended for or about
 - Useful in multi-agent systems where memories need to be shared or directed to specific agents
@@ -240,7 +240,7 @@ Searching that user's memories:
 }
 ```
 
-For multi-agent scenarios, you can also use produced_for to share memories between agents or direct them to specific recipients.
+For multi-agent scenarios, you can also use `produced_for` to share memories between agents or direct them to specific recipients.
 
 **When to use**: Multi-language environments, distributed systems, need HTTP-based integration, building microservices.
 
@@ -265,54 +265,54 @@ Pattern 1: Simple Chatbot with User Memory
 **Scenario**: Chatbot that remembers each user's conversation history and preferences
 
 **Isolation Strategy**:
-- `org_id`: "my-company"
-- `project_id`: "support-bot"
-- `producer`: User identifier (e.g., "user-alice", "user-12345")
+- `org_id: "my-company"`
+- `project_id: "support-bot"`
+- `producer: "user-alice"` (User identifier, e.g. "user-12345")
 - `produced_for`: Not needed for this simple case
 
-**How it works**: When storing a conversation, set producer to the user's ID. When that user returns, search for memories where producer matches their ID to retrieve their conversation history and context. This gives you personalized responses without needing additional parameters.
+**How it works**: When storing a conversation, set `producer` to the user's ID. When that user returns, search for memories where `producer` matches their ID to retrieve their conversation history and context. This gives you personalized responses without needing additional parameters.
 
 Pattern 2: Slackbot with Channel Memory
 
 **Scenario**: Slackbot that maintains shared context within channels, allowing anyone in the channel to search the channel's history
 
 **Isolation Strategy**:
-- `org_id`: "my-company"
-- `project_id`: "slack-assistant"
-- `producer`: User who created the message (e.g., "user-alice", "user-bob")
-- `produced_for`: Channel identifier (e.g., "channel-engineering", "channel-marketing")
+- `org_id: "my-company"`
+- `project_id: "slack-assistant"`
+- `producer: "user-alice"` (User who created the message, e.g. "user-bob")
+- `produced_for: "channel-engineering"` (Channel identifier, e.g. "channel-marketing")
 
-**How it works**: When someone posts in a Slack channel, store the message with producer set to the user who posted it, and produced_for set to the channel ID. When anyone in that channel asks a question, search for memories where produced_for matches the channel ID—this retrieves all messages from that channel regardless of who originally posted them. This enables shared team knowledge that anyone in the channel can access.
+**How it works**: When someone posts in a Slack channel, store the message with `producer` set to the user who posted it, and `produced_for` set to the channel ID. When anyone in that channel asks a question, search for memories where `produced_for` matches the channel ID—this retrieves all messages from that channel regardless of who originally posted them. This enables shared team knowledge that anyone in the channel can access.
 
-Example: Alice posts "We're using PostgreSQL for the new project" in #engineering (stored with `producer: "alice"`, `produced_for`: "channel-engineering"). Later, Bob asks "What database are we using?" in the same channel. The bot searches memories where `produced_for: "channel-engineering"` and finds Alice's message, even though Bob wasn't the original producer.
+Example: Alice posts "We're using PostgreSQL for the new project" in #engineering (stored with `producer: "alice"`, `produced_for: "channel-engineering"`). Later, Bob asks "What database are we using?" in the same channel. The bot searches memories where `produced_for: "channel-engineering"` and finds Alice's message, even though Bob wasn't the original producer.
 
 Pattern 3: Multi-Agent System with Shared Context
 
 **Scenario**: Multiple specialized agents collaborating with shared context about the same entity
 
 **Isolation Strategy:**
-- `org_id`: "healthcare-provider"
-- `project_id`: "patient-care"
-- `producer`: Agent identifier ("triage-agent", "diagnosis-agent", "treatment-agent")
-- `produced_for`: Entity identifier ("patient-12345")
+- `org_id: "healthcare-provider"`
+- `project_id: "patient-care"`
+- `producer: "triage-agent"` (Agent identifier, e.g. "diagnosis-agent", "treatment-agent")
+- `produced_for: "patient-12345"` (Entity identifier)
 
-**How it works**: Each agent stores memories with its own `producer_id`, all tagged `produced_for` the same patient. Any agent can search for memories where `produced_for: "patient-12345"` to access the complete shared context. Filter by `producer` when you need agent-specific insights.
+**How it works**: Each agent stores memories with its own `producer`, all tagged `produced_for` the same patient. Any agent can search for memories where `produced_for: "patient-12345"` to access the complete shared context. Filter by `producer` when you need agent-specific insights.
 
 ## Best Practices for Integration
 
-###1. Strategic Memory Storage
+### 1. Strategic Memory Storage
 
 Don't store everything—be selective. Store facts, preferences, and key decisions, but skip repetitive or transient information. Quality over quantity ensures your memory searches return truly relevant context rather than noise.
 
-###2. Smart Context Retrieval
+### 2. Smart Context Retrieval
 
 Use semantic search with appropriate limits. More isn't always better—focus on relevance. Typically 3-5 memories provide enough context without overwhelming the LLM. Experiment to find the sweet spot for your use case.
 
-###3. Privacy and Isolation
+### 3. Privacy and Isolation
 
 Always scope memory appropriately using the isolation parameters. Use `produced_for` to identify intended recipients, and ensure your `org_id` and `project_id` structure provides proper data boundaries. Memory should enhance personalization while maintaining privacy.
 
-###4. Handle Memory Gracefully
+### 4. Handle Memory Gracefully
 
 Memory operations can fail—network issues, database errors, or service interruptions. Always implement fallback behavior so your application can continue functioning (even if less personalized) when memory is unavailable.
 
