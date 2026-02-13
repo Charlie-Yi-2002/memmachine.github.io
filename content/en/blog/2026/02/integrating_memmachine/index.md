@@ -1,16 +1,12 @@
 ---
-title: "Integrating MemMachine to an AI Agent"
+title: "Integrating MemMachine Into Your AI Agents"
 date: 2026-02-12T14:30:00-08:00
 featured_image: "featured_image.png"
 tags: ["AI Agent", "AI Memory", "Generative AI", "LLM", "Agent Memory", "featured", "Integration", "Developer Tool"]
 author: "Charlie Yi"
-description: "How to integrate MemMachine as the memory in your agent workflow"
-aliases:
-  - /blog/2026/02/integrating_memmachine/
+description: "Learn how to integrate MemMachine as an AI agent memory layer using the Python SDK or REST API. Understand the isolation parameters and storage/retrieval patterns."
 ---
 
-
-# Integrating MemMachine Into Your Agent Workflow
 
 ## Introduction
 
@@ -81,7 +77,7 @@ This dual-memory architecture ensures your AI can both recall specific conversat
 
 ## Understanding Isolation Parameters
 
-Before integrating MemMachine, you need to understand how it organizes and isolates memories. MemMachine v2 uses a straightforward identifier structure to ensure memories are properly scoped:
+Before integrating MemMachine, you need to understand how it organizes and isolates memories. MemMachine uses a straightforward identifier structure to ensure memories are properly scoped:
 
 ## Core Isolation Parameters
 
