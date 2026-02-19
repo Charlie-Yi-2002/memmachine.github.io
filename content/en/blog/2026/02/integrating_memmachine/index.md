@@ -7,7 +7,6 @@ author: "Charlie Yi"
 description: "Learn how to integrate MemMachine as an AI agent memory layer using the Python SDK or REST API. Understand the isolation parameters and storage/retrieval patterns."
 ---
 
-
 ## Introduction
 
 Building an AI agent that remembers? The technical challenge isn't just storing conversations—it's knowing when to retrieve context, how to organize it, and where to inject it into your workflow.
