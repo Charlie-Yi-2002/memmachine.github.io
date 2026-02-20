@@ -11,7 +11,6 @@ description: "LeapReader is a browser extension that allows you to chat with var
 
 Whether you're conducting academic research, staying current with industry developments, or simply learning faster, LeapReader streamlines your digital reading experience.
 
----
 
 ## Core Capabilities
 
@@ -20,25 +19,21 @@ Whether you're conducting academic research, staying current with industry devel
 Instantly condense lengthy articles, research papers, and web pages into clear, actionable summaries.
 LeapReader integrates multiple AI models — including **Gemini**, **DeepSeek**, and **Doubao** — to deliver high-quality results.
 
----
 
 ### Video Intelligence
 
 Generate summaries for **YouTube** and **Bilibili** videos with segment breakdowns and timestamp navigation, allowing you to jump directly to relevant content.
 
----
 
 ### Smart Extraction
 
 Quickly identify and extract key information, quotes, and insights for notes or research documentation.
 
----
 
 ### Persistent Memory
 
 If enabled, user messages are stored in **MemMachine** and can be used in future conversations.
 
----
 
 ## Built for Complicated Workflows
 
@@ -60,7 +55,6 @@ When writing, you can recall saved quotes and summaries without searching throug
 
 This creates a seamless **research-to-writing pipeline** that maintains continuity throughout your project.
 
----
 
 ## Powered by MemMachine
 
@@ -75,7 +69,6 @@ This architecture transforms LeapReader from a simple summarization tool into an
 
 The system is model-agnostic, supporting major LLMs while keeping your data under your control through on-premises or private cloud deployment options.
 
----
 
 ## Privacy and Accessibility
 
@@ -85,7 +78,6 @@ Your reading history and research data remain private and secure.
 
 The intuitive side panel and context menu interface provide powerful capabilities without cluttering your workspace.
 
----
 
 ## Get Started
 
@@ -99,4 +91,3 @@ https://chromewebstore.google.com/detail/leapreader-browse-smarter/kloallkbnddnd
 
 https://memmachine.ai/
 
----
