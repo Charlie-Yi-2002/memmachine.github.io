@@ -7,25 +7,18 @@ author: "Charlie Yi"
 description: "LeapReader is a browser extension that allows you to chat with various AI models, summarize content or YouTube Videos, and recall memories for later us."
 ---
 
-**LeapReader** is an AI-powered Chrome extension that helps you read, understand, and extract insights from web content more efficiently. Whether you're conducting academic research, staying current with industry developments, or simply learning faster, LeapReader streamlines your digital reading experience.
+[LeapReader](https://chromewebstore.google.com/detail/leapreader-browse-smarter/kloallkbnddndbdpdoonkopopdafllgo), powered by [MemMachine](https://memmachine.ai), is an AI-powered Chrome extension that helps you read, understand, and extract insights from web content more efficiently. Whether you're conducting academic research, staying current with industry developments, or simply learning faster, LeapReader streamlines your digital reading experience.
 
-## Core Capabilities
+## About LeapReader
 
-### Intelligent Summarization
+### Key Features
 
-Instantly condense lengthy articles, research papers, and web pages into clear, actionable summaries. LeapReader integrates multiple AI models — including **Gemini**, **DeepSeek**, and **Doubao** — to deliver high-quality results.
-
-### Video Intelligence
-
-Generate summaries for **YouTube** and **Bilibili** videos with segment breakdowns and timestamp navigation, allowing you to jump directly to relevant content.
-
-### Smart Extraction
-
-Quickly identify and extract key information, quotes, and insights for notes or research documentation.
-
-### Persistent Memory
-
-If enabled, user messages are stored in **MemMachine** and can be used in future conversations.
+- AI-powered summarization: Instantly condense long articles, papers, or web pages into clear, concise summaries using top-tier large language models.
+- Video Summaries: Support for YouTube and Bilibili—generate full-video overviews, segment summaries, and timestamp-based jump links.
+- Intelligent context detection: Automatically analyzes webpage content to enhance AI-powered reading assistance performance.
+- Highlighting and extraction: Quickly highlight key sentences and extract vital information for notes, research, or personal reference.
+- Multiple AI backend support: Choose from DeepSeek, Doubao, Kimi and other supported models to customize your AI reading assistant based on preference or region.
+- Seamless UI integration: Access all functionalities via an elegant side panel, floating button, and convenient right-click menus for fluid, responsive interaction.
 
 ## Built for Complicated Workflows
 
@@ -44,6 +37,12 @@ With LeapReader:
 - Maintain context across multiple documents
 
 When writing, you can recall saved quotes and summaries without searching through tabs or files. This creates a seamless **research-to-writing pipeline** that maintains continuity throughout your project.
+
+Take for example, you are doing research to write a paper. You have multiple tabs open and want to use quotes for your various sources to add to your paper. LeapReader's extension can help you look for relevant quotes within the article.
+When writing the paper, you can ask LeapReader to remind you the quotes and add it into your paper. This can streamline the entire research and writing process. This is only possible with the memory from MemMachine. MemMachine helps to store
+the chat logs to be referenced for later.
+
+![LeapReader Workflow](workflow.png)
 
 ## Powered by MemMachine
 
@@ -64,6 +63,7 @@ LeapReader operates primarily within your browser, transmitting content to AI pr
 
 ## Get Started
 
-LeapReader is available through the Chrome Web Store. Install the extension and begin reading smarter immediately — no complex setup required.
+LeapReader is available through the Chrome Web Store. Install the extension and begin reading smarter immediately — no complex setup required. MemMachine is used in LeapReader by default.
 
-[Download LeapReader](https://chromewebstore.google.com/detail/leapreader-browse-smarter/kloallkbnddndbdpdoonkopopdafllgo) | [Learn More About MemMachine](https://memmachine.ai/)
+- [Download LeapReader](https://chromewebstore.google.com/detail/leapreader-browse-smarter/kloallkbnddndbdpdoonkopopdafllgo)
+- [Learn More About MemMachine](https://memmachine.ai/)
