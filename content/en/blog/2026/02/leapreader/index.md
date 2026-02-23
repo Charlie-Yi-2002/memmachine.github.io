@@ -1,6 +1,6 @@
 ---
 title: "LeapReader: Transform How You Browse the Web"
-date: 2026-02-25T09:00:00-08:00
+date: 2026-02-23T09:00:00-08:00
 featured_image: "featured_image.png"
 tags: ["AI Agent", "AI Memory", "Generative AI", "LLM", "Agent Memory", "featured", "Integration", "Developer Tool", "Chatbot", "Productivity Tool"]
 author: "Charlie Yi"
